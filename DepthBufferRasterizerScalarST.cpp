@@ -217,6 +217,7 @@ void DepthBufferRasterizerScalarST::RasterizeBinnedTrianglesToDepthBuffer(UINT t
 			Z[i] = xformedPos[i].z;
 		}
 
+		//三角形的边直线方程，可以等效转化为edge function，注意对顶点带入edge function = 1，注意符号即可
 		// Fab(x, y) =     Ax       +       By     +      C              = 0
 		// Fab(x, y) = (ya - yb)x   +   (xb - xa)y + (xa * yb - xb * ya) = 0 //点斜式化简后
 		// Compute A = (ya - yb) for the 3 line segments that make up each triangle
